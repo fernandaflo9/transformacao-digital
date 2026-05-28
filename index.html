@@ -3,31 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conecta Vagas</title>
-
+    <title>JobConnect</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-    <h2>Portal de Vagas</h2>
-</nav>
-    <header>
-        <h1>JobConnect</h1>
-        <p>Inclusão e oportunidades para todos.</p>
+
+    <header class="banner">
+        <div class="titulo-central">
+            <h1>JobConnect</h1>
+            <p>Inclusão e oportunidades para todos.</p>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
 
-        <section class="card">
-            <h2>Vaga: Assistente Administrativo</h2>
+        <div class="card">
+            <h3>Vaga: Assistente Administrativo</h3>
             <p>Empresa inclusiva buscando novos talentos.</p>
-            <button>Candidatar-se</button>
-        </section>
+            <button onclick="abrirFormulario('Assistente Administrativo')">
+                Candidatar-se
+            </button>
+        </div>
 
-        <section class="card">
-            <h2>Vaga: Suporte Técnico</h2>
+        <div class="card">
+            <h3>Vaga: Suporte Técnico</h3>
             <p>Oportunidade para trabalho híbrido.</p>
-            <button>Candidatar-se</button>
+            <button onclick="abrirFormulario('Suporte Técnico')">
+                Candidatar-se
+            </button>
+        </div>
+
+        <!-- FORMULÁRIO -->
+        <section id="formulario" class="form escondido">
+
+            <h2>Cadastro da Candidatura</h2>
+
+            <input type="text" id="nome" placeholder="Nome completo">
+            <input type="email" id="email" placeholder="E-mail">
+            <input type="text" id="telefone" placeholder="Telefone">
+
+            <input type="text" id="vaga" readonly>
+
+            <button onclick="cadastrar()">Cadastrar</button>
+
+            <!-- STATUS -->
+            <div id="status" class="status escondido">
+                <h3>✔ Candidatura enviada com sucesso!</h3>
+                <p>Boa sorte 🍀</p>
+                <p>Status: Enviado</p>
+                <p>Etapa: Análise inicial</p>
+                <p>Prazo: até 5 dias úteis</p>
+            </div>
+
         </section>
 
     </main>
