@@ -4,78 +4,72 @@ body {
     background: #f4f4f4;
 }
 
-/* HEADER */
 .banner {
-    background: linear-gradient(135deg, #5a00a3, #3b006b);
+    background: linear-gradient(135deg, #2e8b57, #1f5e3b);
     color: white;
     text-align: center;
-    padding: 70px 20px;
+    padding: 30px;
 }
 
-.titulo-central h1 {
-    font-size: 60px;
-    margin: 0;
-}
-
-.titulo-central p {
-    font-size: 20px;
-    opacity: 0.9;
-}
-
-/* CONTAINER */
-.container {
+/* LAYOUT 2 COLUNAS */
+.layout {
+    display: flex;
+    gap: 20px;
     padding: 20px;
 }
 
-/* CARD */
+/* LADO ESQUERDO */
+.vagas {
+    flex: 1;
+}
+
+/* LADO DIREITO */
+.cadastro {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* CARD VAGAS */
 .card {
     background: white;
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* BOTÃO */
-button {
-    background: #5a00a3;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #3f0075;
-}
-
-/* FORM */
-.form {
-    background: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 input {
-    display: block;
     width: 100%;
-    margin-bottom: 10px;
     padding: 10px;
+    margin: 8px 0;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
-/* STATUS */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #256f45;
+}
+
 .status {
-    margin-top: 15px;
+    margin-top: 10px;
     background: #e6ffe6;
-    padding: 15px;
+    padding: 10px;
     border-left: 5px solid green;
 }
 
-/* ESCONDER */
 .escondido {
     display: none;
 }

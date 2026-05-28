@@ -8,62 +8,56 @@
 </head>
 <body>
 
-    <header class="banner">
-        <div class="titulo-central">
-            <h1>JobConnect</h1>
-            <p>Inclusão e oportunidades para todos.</p>
-        </div>
-    </header>
+<header class="banner">
+    <h1>JobConnect</h1>
+    <p>Inclusão e oportunidades para todos</p>
+</header>
 
-    <main class="container">
+<div class="layout">
+
+    <!-- VAGAS -->
+    <div class="vagas">
 
         <div class="card">
-            <h3>Vaga: Assistente Administrativo</h3>
+            <h3>Assistente Administrativo</h3>
             <p>Empresa inclusiva buscando novos talentos.</p>
-            <button onclick="abrirFormulario('Assistente Administrativo')">
+            <button onclick="selecionarVaga('Assistente Administrativo')">
                 Candidatar-se
             </button>
         </div>
 
         <div class="card">
-            <h3>Vaga: Suporte Técnico</h3>
+            <h3>Suporte Técnico</h3>
             <p>Oportunidade para trabalho híbrido.</p>
-            <button onclick="abrirFormulario('Suporte Técnico')">
+            <button onclick="selecionarVaga('Suporte Técnico')">
                 Candidatar-se
             </button>
         </div>
 
-        <!-- FORMULÁRIO -->
-        <section id="formulario" class="form escondido">
+    </div>
 
-            <h2>Cadastro da Candidatura</h2>
+    <!-- CADASTRO -->
+    <div class="cadastro">
 
-            <input type="text" id="nome" placeholder="Nome completo">
-            <input type="email" id="email" placeholder="E-mail">
-            <input type="text" id="telefone" placeholder="Telefone">
+        <h2>Cadastro da Candidatura</h2>
 
-            <input type="text" id="vaga" readonly>
+        <input type="text" id="nome" placeholder="Nome completo">
+        <input type="email" id="email" placeholder="E-mail">
+        <input type="text" id="telefone" placeholder="Telefone">
 
-            <button onclick="cadastrar()">Cadastrar</button>
+        <input type="text" id="vaga" placeholder="Vaga selecionada" readonly>
 
-            <!-- STATUS -->
-            <div id="status" class="status escondido">
-                <h3>✔ Candidatura enviada com sucesso!</h3>
-                <p>Boa sorte 🍀</p>
-                <p>Status: Enviado</p>
-                <p>Etapa: Análise inicial</p>
-                <p>Prazo: até 5 dias úteis</p>
-            </div>
+        <button onclick="cadastrar()">Cadastrar</button>
 
-        </section>
+        <div id="status" class="status escondido">
+            <h3>✔ Candidatura enviada com sucesso!</h3>
+            <p>Boa sorte 🍀</p>
+        </div>
 
-    </main>
+    </div>
 
-    <footer>
-        <p>Projeto acadêmico - Transformação Digital</p>
-    </footer>
+</div>
 
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>

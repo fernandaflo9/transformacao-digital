@@ -1,28 +1,20 @@
-function abrirFormulario(vaga) {
-    document.getElementById("formulario").classList.remove("escondido");
+function selecionarVaga(vaga) {
     document.getElementById("vaga").value = vaga;
-
-    // janela ao clicar em candidatar-se
-    alert("Candidatura enviada, boa sorte 🍀");
+    alert("Vaga selecionada: " + vaga);
 }
 
 function cadastrar() {
     const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const telefone = document.getElementById("telefone").value;
 
-    if (nome === "" || email === "" || telefone === "") {
-        alert("Preencha todos os campos!");
+    if (nome === "") {
+        alert("Preencha seus dados!");
         return;
     }
 
-    // janela ao clicar em cadastrar
-    alert("Cadastro realizado com sucesso ✔");
+    document.getElementById("status").classList.remove("escondido");
 
-    // fecha formulário (opcional, deixa mais limpo)
-    document.getElementById("formulario").classList.add("escondido");
+    alert("Candidatura enviada com sucesso! Boa sorte 🍀");
 
-    // limpa campos
     document.getElementById("nome").value = "";
     document.getElementById("email").value = "";
     document.getElementById("telefone").value = "";
