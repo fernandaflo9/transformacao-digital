@@ -8,34 +8,45 @@
 
 <body>
 
-<!-- TOPO LOGIN -->
 <header class="topo">
     <h1>JobConnect</h1>
     <p>Inclusão e oportunidades para todos</p>
 </header>
 
 <!-- LOGIN + CADASTRO -->
-<div id="auth" class="auth-container">
+<section id="auth" class="auth-container">
 
     <div class="box">
         <h2>Login</h2>
-        <input type="email" id="emailLogin" placeholder="E-mail">
-        <input type="password" id="senhaLogin" placeholder="Senha">
-        <button onclick="entrar()">Entrar</button>
+
+        <label for="emailLogin">E-mail</label>
+        <input id="emailLogin" type="email">
+
+        <label for="senhaLogin">Senha</label>
+        <input id="senhaLogin" type="password">
+
+        <button onclick="login()">Entrar</button>
     </div>
 
     <div class="box">
         <h2>Cadastro</h2>
-        <input type="text" id="nomeCadastro" placeholder="Nome completo">
-        <input type="email" id="emailCadastro" placeholder="E-mail">
-        <input type="password" id="senhaCadastro" placeholder="Senha">
+
+        <label for="nomeCadastro">Nome</label>
+        <input id="nomeCadastro" type="text">
+
+        <label for="emailCadastro">E-mail</label>
+        <input id="emailCadastro" type="email">
+
+        <label for="senhaCadastro">Senha</label>
+        <input id="senhaCadastro" type="password">
+
         <button onclick="cadastrarUsuario()">Cadastrar</button>
     </div>
 
-</div>
+</section>
 
 <!-- SISTEMA -->
-<div id="sistema" class="escondido">
+<section id="sistema" class="escondido">
 
 <header class="header-sistema">
     <h2>Portal de Vagas</h2>
@@ -45,19 +56,16 @@
 
     <!-- CURRÍCULO -->
     <div class="painel">
-        <h2>Enviar Currículo</h2>
+        <h2>Currículo (PDF)</h2>
 
-        <p>Envie seu PDF:</p>
         <input type="file" accept="application/pdf">
 
-        <button onclick="alert('Currículo enviado com sucesso!')">
-            Enviar Currículo
-        </button>
+        <button onclick="enviarCurriculo()">Enviar Currículo</button>
     </div>
 
     <!-- VAGAS -->
     <div class="painel">
-        <h2>Vagas Disponíveis</h2>
+        <h2>Vagas</h2>
 
         <div class="vaga">
             <h3>Assistente Administrativo</h3>
@@ -82,13 +90,17 @@
 
     <button onclick="candidatar()">Candidatar-se</button>
 
-    <div id="status" class="status escondido">
-        ✔ Candidatura enviada com sucesso! Boa sorte 🍀
-    </div>
+    <p id="mensagem"></p>
 
 </div>
 
+<!-- KPIs -->
+<div class="kpi">
+    <p>Candidaturas: <span id="candidaturas">0</span></p>
+    <p>Vagas visualizadas: <span id="vagas">0</span></p>
 </div>
+
+</section>
 
 <script src="script.js"></script>
 </body>

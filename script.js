@@ -1,49 +1,52 @@
-function entrar() {
-const email = document.getElementById("emailLogin").value;
-const senha = document.getElementById("senhaLogin").value;
+let candidaturas = 0;
+let vagasVisualizadas = 0;
 
-if(email === "" || senha === "") {
-alert("Preencha login!");
-return;
-}
-
+/* LOGIN */
+function login() {
 document.getElementById("auth").classList.add("escondido");
 document.getElementById("sistema").classList.remove("escondido");
 }
 
+/* CADASTRO */
 function cadastrarUsuario() {
-const nome = document.getElementById("nomeCadastro").value;
-
-if(nome === "") {
-alert("Preencha cadastro!");
-return;
-}
-
 alert("Cadastro realizado com sucesso!");
 }
 
-/* VER DETALHES */
+/* CURRÍCULO */
+function enviarCurriculo() {
+alert("Currículo enviado com sucesso!");
+}
+
+/* DETALHES */
 function verDetalhes(tipo) {
+
+vagasVisualizadas++;
+document.getElementById("vagas").innerText = vagasVisualizadas;
 
 document.getElementById("detalhes").classList.remove("escondido");
 
 if(tipo === "adm") {
 document.getElementById("tituloVaga").innerText = "Assistente Administrativo";
-document.getElementById("descricao").innerText = "Suporte administrativo e organização de documentos.";
-document.getElementById("local").innerText = "📍 Fortaleza - CE";
+document.getElementById("descricao").innerText = "Organização administrativa e suporte interno.";
+document.getElementById("local").innerText = "Fortaleza - CE";
 }
 
 if(tipo === "suporte") {
 document.getElementById("tituloVaga").innerText = "Suporte Técnico";
-document.getElementById("descricao").innerText = "Atendimento técnico e suporte a sistemas.";
-document.getElementById("local").innerText = "📍 Remoto / Híbrido";
+document.getElementById("descricao").innerText = "Suporte a sistemas e usuários.";
+document.getElementById("local").innerText = "Remoto / Híbrido";
 }
+
 }
 
 /* CANDIDATURA */
 function candidatar() {
 
-document.getElementById("status").classList.remove("escondido");
+candidaturas++;
+document.getElementById("candidaturas").innerText = candidaturas;
 
-alert("Candidatura enviada com sucesso! Boa sorte 🍀");
+document.getElementById("mensagem").innerText =
+"✔ Candidatura enviada com sucesso! Boa sorte 🍀";
+
+alert("Candidatura realizada!");
 }
