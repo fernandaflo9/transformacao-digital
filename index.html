@@ -1,60 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JobConnect</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>JobConnect</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="banner">
+<!-- TOPO LOGIN -->
+<header class="topo">
     <h1>JobConnect</h1>
     <p>Inclusão e oportunidades para todos</p>
 </header>
 
+<!-- LOGIN + CADASTRO -->
+<div id="auth" class="auth-container">
+
+    <div class="box">
+        <h2>Login</h2>
+        <input type="email" id="emailLogin" placeholder="E-mail">
+        <input type="password" id="senhaLogin" placeholder="Senha">
+        <button onclick="entrar()">Entrar</button>
+    </div>
+
+    <div class="box">
+        <h2>Cadastro</h2>
+        <input type="text" id="nomeCadastro" placeholder="Nome completo">
+        <input type="email" id="emailCadastro" placeholder="E-mail">
+        <input type="password" id="senhaCadastro" placeholder="Senha">
+        <button onclick="cadastrarUsuario()">Cadastrar</button>
+    </div>
+
+</div>
+
+<!-- SISTEMA -->
+<div id="sistema" class="escondido">
+
+<header class="header-sistema">
+    <h2>Portal de Vagas</h2>
+</header>
+
 <div class="layout">
 
+    <!-- CURRÍCULO -->
+    <div class="painel">
+        <h2>Enviar Currículo</h2>
+
+        <p>Envie seu PDF:</p>
+        <input type="file" accept="application/pdf">
+
+        <button onclick="alert('Currículo enviado com sucesso!')">
+            Enviar Currículo
+        </button>
+    </div>
+
     <!-- VAGAS -->
-    <div class="vagas">
+    <div class="painel">
+        <h2>Vagas Disponíveis</h2>
 
-        <div class="card">
+        <div class="vaga">
             <h3>Assistente Administrativo</h3>
-            <p>Empresa inclusiva buscando novos talentos.</p>
-            <button onclick="selecionarVaga('Assistente Administrativo')">
-                Candidatar-se
-            </button>
+            <button onclick="verDetalhes('adm')">Ver detalhes</button>
         </div>
 
-        <div class="card">
+        <div class="vaga">
             <h3>Suporte Técnico</h3>
-            <p>Oportunidade para trabalho híbrido.</p>
-            <button onclick="selecionarVaga('Suporte Técnico')">
-                Candidatar-se
-            </button>
+            <button onclick="verDetalhes('suporte')">Ver detalhes</button>
         </div>
 
     </div>
 
-    <!-- CADASTRO -->
-    <div class="cadastro">
+</div>
 
-        <h2>Cadastro da Candidatura</h2>
+<!-- DETALHES -->
+<div id="detalhes" class="detalhes escondido">
 
-        <input type="text" id="nome" placeholder="Nome completo">
-        <input type="email" id="email" placeholder="E-mail">
-        <input type="text" id="telefone" placeholder="Telefone">
+    <h2 id="tituloVaga"></h2>
+    <p id="descricao"></p>
+    <p id="local"></p>
 
-        <input type="text" id="vaga" placeholder="Vaga selecionada" readonly>
+    <button onclick="candidatar()">Candidatar-se</button>
 
-        <button onclick="cadastrar()">Cadastrar</button>
-
-        <div id="status" class="status escondido">
-            <h3>✔ Candidatura enviada com sucesso!</h3>
-            <p>Boa sorte 🍀</p>
-        </div>
-
+    <div id="status" class="status escondido">
+        ✔ Candidatura enviada com sucesso! Boa sorte 🍀
     </div>
+
+</div>
 
 </div>
 
